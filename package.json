@@ -1,0 +1,15 @@
+{
+  "name": "clone-tabnews",
+  "version": "1.0.0",
+  "description": "Implementação do https://www.tabnew.com.br para o https://curso.dev",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lucas Ferreira",
+  "license": "MIT",
+  "dependencies": {
+    "react": "18.2",
+    "react-dom": "18.2"
+  }
+}
