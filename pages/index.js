@@ -1,6 +1,6 @@
 function Home() {
   return <div className="content">
-    <h1 className="title">"Quando o ultimo peixe for pescado, a ultima árvore derrubada e o ultimo rio poluído, o ser humano vai perceber que dinheiro não se come ."
+    <h1 className="title">"Vanderléia, vai trabalhar."
       <div className="aurora">
         <div className="aurora__item"></div>
         <div className="aurora__item"></div>
@@ -8,7 +8,7 @@ function Home() {
         <div className="aurora__item"></div>
       </div>
     </h1>
-    <p className="subtitle">Provérbio Indígena</p>
+    <p className="subtitle">Lucas Ferreira</p>
   </div>
 }
 
