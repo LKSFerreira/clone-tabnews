@@ -1,5 +1,5 @@
-import React from 'react';
-import './style.css';
+import React from "react";
+import "./style.css";
 
 // Este componente será mantido entre as mudanças de rota
 // Pense nisso como um componente de layout de nível superior
