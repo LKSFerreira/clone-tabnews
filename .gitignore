@@ -1,4 +1,3 @@
-.github
 *.rsuser
 *.suo
 *.user
@@ -164,7 +163,6 @@ FakesAssemblies/
 *.GhostDoc.xml
 .ntvs_analysis.dat
 node_modules/
-.github/
 .next/
 *.plg
 *.opt
