@@ -1,0 +1,7 @@
+# services - Mapeia todos os serivçcos que queremos levantar
+# Ex: database, mailcatcher, Apache Server
+services:
+  database:
+    image: "postgres:16.1-alpine3.18"
+    environment:
+      POSTGRES_PASSWORD: "local_password"
