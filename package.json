@@ -9,7 +9,7 @@
     "lint:fix": "prettier --write .",
     "test": "jest",
     "test:watch": "jest --watchAll",
-    "pg": "docker compose --file infra/compose.yaml up --detach"
+    "services": "docker compose --file infra/compose.yaml up --detach"
   },
   "author": "Lucas Ferreira",
   "license": "MIT",
