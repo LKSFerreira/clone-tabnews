@@ -4,12 +4,14 @@
   "description": "Implementação do https://www.tabnew.com.br para o https://curso.dev",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev",
-    "lint:check": "prettier --check .",
-    "lint:fix": "prettier --write .",
+    "dev": "npm run serv-down && npm run serv-up && next dev",
+    "serv-up": "docker compose --file infra/compose.yaml up --detach",
+    "serv-stop": "docker compose --file infra/compose.yaml stop",
+    "serv-down": "docker compose --file infra/compose.yaml down",
+    "lint-check": "prettier --check .",
+    "lint-fix": "prettier --write .",
     "test": "jest",
-    "test:watch": "jest --watchAll",
-    "services": "docker compose --file infra/compose.yaml up --detach"
+    "test-watch": "jest --watchAll"
   },
   "author": "Lucas Ferreira",
   "license": "MIT",
