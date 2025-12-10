@@ -34,9 +34,12 @@ docker compose logs -f app
 
 *Regra de ouro: Use `exec app` para rodar comandos dentro do container.*
 
+### *Você deve estar dentro do diretório `infra` para rodar os comandos*
+
 **Acessar o terminal do container (SSH)**
 
 ```bash
+cd infra
 docker compose exec app sh
 ```
 
@@ -95,7 +98,14 @@ Cansado de digitar `docker compose exec app` toda hora? Crie um atalho.
 alias d="docker compose exec app"
 ```
 
-**Como usar:** `d npm install zod`
+**Como usar:** `d npm install <dependencia>`
+
+### O que eu (LKS Ferreira) uso
+
+```bash
+alias npm="docker compose -f infra/compose.yaml exec app npm"
+```
+> Dessa forma podemos usar `npm install <dependencia>` sem precisar entrar no diretorio `infra` ,ou seja, diretamente no diretorio raiz do projeto.
 
 ### 2\. Alias Permanente (Recomendado)
 
