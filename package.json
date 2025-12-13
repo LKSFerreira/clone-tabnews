@@ -12,7 +12,7 @@
     "lint:check": "prettier --check .",
     "lint:fix": "prettier --write .",
     "test": "jest",
-    "test:watch": "jest --watchAll"
+    "test:watch": "nodemon -L --watch . --ext js,json --ignore node_modules --exec 'npm test'"
   },
   "author": "Lucas Ferreira",
   "license": "MIT",
@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "jest": "^29.6.2",
+    "nodemon": "^3.1.11",
     "prettier": "^3.1.0"
   }
 }
