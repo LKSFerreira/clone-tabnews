@@ -20,5 +20,5 @@ services:
       - ../.env
     environment:
       - NODE_ENV=development
-      - POSTGRES_HOST=database
+      # - POSTGRES_HOST=database
       - WATCHPACK_POLLING=true
