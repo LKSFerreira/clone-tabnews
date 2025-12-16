@@ -1,5 +1,6 @@
 .env
 .env.aiven.io
+.env.neon.com
 *.rsuser
 *.suo
 *.user
