@@ -2,7 +2,7 @@ services:
   database:
     image: "postgres:16.1-alpine3.18"
     env_file:
-      - ../.env
+      - ../.env.development
     ports:
       - "5432:5432"
   app:
@@ -17,8 +17,8 @@ services:
     stdin_open: true
     tty: true
     env_file:
-      - ../.env
+      - ../.env.development
     environment:
       - NODE_ENV=development
-      # - POSTGRES_HOST=database
+      - POSTGRES_HOST=database
       - WATCHPACK_POLLING=true
