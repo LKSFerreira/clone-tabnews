@@ -1,6 +1,8 @@
 .env
 .env.aiven.io
 .env.neon.com
+.env.aurora
+infra/global-bundle.pem
 *.rsuser
 *.suo
 *.user
