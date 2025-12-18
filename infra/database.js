@@ -1,4 +1,6 @@
 import { Client } from "pg";
+import fs from "fs";
+import path from "path";
 
 async function query(queryObject) {
   const client = new Client({
@@ -7,10 +9,10 @@ async function query(queryObject) {
     user: process.env.POSTGRES_USER,
     database: process.env.POSTGRES_DB,
     password: process.env.POSTGRES_PASSWORD,
-    ssl: process.env.NODE_ENV === "development" ? true : true,
+    ssl: getSslValue(),
   });
 
-   try {
+  try {
     await client.connect();
     const result = await client.query(queryObject);
     return result;
@@ -22,3 +24,14 @@ async function query(queryObject) {
 export default {
   query: query,
 };
+
+function getSslValue() {
+  if (process.env.POSTGRES_HOST === "localhost") {
+    return false;
+  }
+
+  return {
+    ca: fs.readFileSync(path.resolve("infra", "global-bundle.pem")).toString(),
+    // rejectUnauthorized: false,
+  };
+}
