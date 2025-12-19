@@ -4,12 +4,12 @@ import path from "path";
 
 async function query(queryObject) {
   const client = new Client({
-    host: process.env.POSTGRES_HOST,
+    host: getHostValue(),
     port: process.env.POSTGRES_PORT,
     user: process.env.POSTGRES_USER,
     database: process.env.POSTGRES_DB,
     password: process.env.POSTGRES_PASSWORD,
-    ssl: getSslValue(),
+    ssl: getSSLValue(),
   });
 
   try {
@@ -25,7 +25,7 @@ export default {
   query: query,
 };
 
-function getSslValue() {
+function getSSLValue() {
   if (process.env.POSTGRES_HOST === "localhost") {
     return false;
   }
@@ -34,4 +34,12 @@ function getSslValue() {
     ca: fs.readFileSync(path.resolve("infra", "global-bundle.pem")).toString(),
     // rejectUnauthorized: false,
   };
+}
+
+function getHostValue() {
+  if (process.env.POSTGRES_HOST === "localhost") {
+    return "database";
+  }
+
+  return process.env.POSTGRES_HOST;
 }
