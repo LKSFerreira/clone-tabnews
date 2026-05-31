@@ -31,8 +31,9 @@ function getSSLValue() {
   }
 
   return {
-    ca: fs.readFileSync(path.resolve("infra", "global-bundle.pem")).toString(),
+    //ca: fs.readFileSync("./infra/global-bundle.pem").toString(),
     // rejectUnauthorized: false,
+    rejectUnauthorized: true,
   };
 }
 
