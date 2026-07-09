@@ -1,6 +1,4 @@
 import { Client } from "pg";
-import fs from "fs";
-import path from "path";
 
 async function query(queryObject) {
   const client = new Client({
@@ -16,6 +14,9 @@ async function query(queryObject) {
     await client.connect();
     const result = await client.query(queryObject);
     return result;
+  } catch (ex) {
+    console.log(ex);
+    throw ex;
   } finally {
     await client.end();
   }
