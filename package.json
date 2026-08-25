@@ -13,8 +13,8 @@
     "lint:fix": "prettier --write .",
     "test": "jest",
     "test:watch": "nodemon -L --watch . --ext js,json --ignore node_modules --exec 'npm test'",
-    "migrate:create": "node-pg-migrate --migrations-dir infra/migrations create",
-    "migrate:up": "node-pg-migrate --migrations-dir infra/migrations up"
+    "migration:create": "node-pg-migrate --migrations-dir infra/migrations create",
+    "migration:up": "node-pg-migrate --migrations-dir infra/migrations up"
   },
   "author": "Lucas Ferreira",
   "license": "MIT",
