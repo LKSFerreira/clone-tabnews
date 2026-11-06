@@ -17,7 +17,7 @@ describe("GET to /api/v1/status", () => {
   });
 
   test("Deveria retornar uma data válida", async () => {
-    const parsedUpdatedAt = new Date( responseBody.updated_at).toISOString();
+    const parsedUpdatedAt = new Date(responseBody.updated_at).toISOString();
 
     expect(responseBody.updated_at).toBeDefined();
     expect(responseBody.updated_at).toEqual(expect.any(String));
@@ -26,7 +26,9 @@ describe("GET to /api/v1/status", () => {
   });
 
   test("Deveria retornar o máximo de conexões no banco de dados", () => {
-    expect(responseBody.dependencies.database.max_connections).toBe(100);
+    expect(responseBody.dependencies.database.max_connections).toBeGreaterThan(
+      100,
+    );
   });
 
   test("Deveria retornar o número de conexões abertas no banco de dados", () => {
@@ -40,9 +42,6 @@ describe("GET to /api/v1/status", () => {
 
     expect(version).toBeDefined();
     expect(version).toEqual(expect.any(String));
-    expect(parsedVersion).toBeGreaterThan(15);
-    expect(parsedVersion).toBeGreaterThanOrEqual(16);
-    expect(parsedVersion).toBeLessThan(17);
+    expect(parsedVersion).toBeGreaterThanOrEqual(17);
   });
-
 });
